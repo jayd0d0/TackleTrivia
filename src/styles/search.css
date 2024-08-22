@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i');
+
+form {
+  position: relative;
+  width: 350px; /* Increase the width of the form */
+  height: 50px;
+  background: white;
+  box-sizing: border-box;
+  border: 2px solid grey;
+  padding: 5px;
+  transition: all 1s;
+  border-radius: 50px;
+}
+
+input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensure input takes up full width of the form */
+  height: 42.5px;
+  line-height: 30px;
+  outline: 0;
+  border: 0;
+  font-size: 1em;
+  padding: 0 20px;
+  display: block;
+  border-radius: 0; /* Remove rounded edges */
+  box-shadow: none;
+  transition: box-shadow 0.3s ease;
+  border-radius: 50px;
+}
+
+input:focus {
+  box-shadow: 0 0 20px darkgrey; /* Add dark grey glow on focus */
+}
+
+.fa {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 42.5px;
+  height: 42.5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #8c52ff;
+  text-align: center;
+  font-size: 1.2em;
+  transition: all 1s;
+  background: #8c52ff;
+  color: white;
+  border-radius: 0; /* Remove rounded edges */
+}
+
+.dropdown-menu {
+    font-family: sans-serif;
+    position: absolute;
+    top: 100%; /* Position the dropdown right below the form */
+    left: 0; /* Align the left edge of the dropdown with the form */
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #fff;
+    z-index: 1000;
+    width: 100%; /* Ensure the dropdown is the same width as the form */
+    box-sizing: border-box;
+    margin-top: 5px; /* Optional: Add a small margin to create space between the form and the dropdown */
+    border-radius: 10px;
+}
+
+.table-container {
+  max-width: 1300px; /* Adjust width as needed */
+  max-height: 400px; /* Adjust height as needed */
+  overflow-y: auto; /* Make the table body scrollable */
+}
+
+.table {
+  border-collapse: collapse; /* Ensure table borders collapse for better alignment */
+  width: 100%;
+}
+
+.table thead th {
+  position: sticky; /* Make the header sticky */
+  top: 0; /* Stick it to the top of the container */
+  background-color: black; /* Match the background color of the header */
+  color: white; /* Match the text color of the header */
+  z-index: 1; /* Ensure it stays on top of the scrollable body */
+}
+
+.table tbody td {
+  border-right: 2px solid black; /* Vertical line between cells */
+}
+
+.table tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9; /* Optional: Alternate row color */
+}
+
+/* Add this to your CSS file */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.fade-in-up {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+
