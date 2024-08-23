@@ -5,6 +5,7 @@ import Typography from '@mui/joy/Typography';
 import Sheet from '@mui/joy/Sheet';
 import Confetti from 'react-confetti';
 import { Transition } from 'react-transition-group';
+import BradmanDancing from '../assets/eshays.gif';
 
 const duration = 200; // Duration of the transition in milliseconds
 
@@ -35,43 +36,69 @@ const SuccessModal = ({ open, onClose, player }) => {
                       numberOfPieces={500}
                       style={{ position: 'absolute', top: 0, left: 0, zIndex: 1 }}
                   />
-                  <Sheet
-                    variant="outlined"
-                    sx={{
-                      maxWidth: 500,
-                      borderRadius: 'md',
-                      p: 3,
-                      boxShadow: 'lg',
-                      opacity: 0,
-                      transition: `opacity ${duration}ms ease-in-out`,
-                      ...transitionStyles[state],
+                  <div
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      gap: '20px' // Optional: Add space between items
                     }}
                   >
-                    <ModalClose variant="plain" sx={{ m: 1 }} />
-                    <Typography
-                      component="h2"
-                      id="modal-title"
-                      level="h3"
-                      textColor="inherit"
-                      fontWeight="lg"
-                      mb={1}
+                    <img src={BradmanDancing} alt="yolo" style={{ height: 'auto', width: 'auto' }} />
+
+                    <Sheet
+                      variant="outlined"
+                      sx={{
+                        maxWidth: 500,
+                        borderRadius: 'md',
+                        p: 3,
+                        boxShadow: 'lg',
+                        opacity: 0,
+                        transition: `opacity ${duration}ms ease-in-out`,
+                        ...transitionStyles[state],
+                      }}
                     >
-                      Congratulations!
-                    </Typography>
-                    <Typography id="modal-desc" textColor="text.tertiary">
-                      You have found the correct player!
-                    </Typography>
-                    <div style={{ marginTop: '40px', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+                      <ModalClose variant="plain" sx={{ m: 1, alignSelf: 'flex-end' }} />
+                      <Typography
+                        component="h2"
+                        id="modal-title"
+                        level="h3"
+                        textColor="inherit"
+                        fontWeight="lg"
+                        mb={1}
+                        align="center"
+                      >
+                        Congratulations!
+                      </Typography>
+                      <Typography id="modal-desc" textColor="text.tertiary">
+                        You have found the correct player!
+                      </Typography>
+                      <div
+                        style={{
+                          marginTop: '40px',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          flexDirection: 'column',
+                        }}
+                      >
                         {player["Profile-Img"] ? (
-                            <img src={player["Profile-Img"]} alt={player.Player} style={{ height: '300px', width: 'auto', borderRadius: '8px' }} />
+                          <img
+                            src={player["Profile-Img"]}
+                            alt={player.Player}
+                            style={{ height: '300px', width: 'auto', borderRadius: '8px' }}
+                          />
                         ) : (
-                            <p>Image not available</p>
+                          <p>Image not available</p>
                         )}
                         <Typography variant="h6" component="div" style={{ marginTop: '10px' }}>
-                            {player.Player || "Player name not available"}
+                          {player.Player || "Player name not available"}
                         </Typography>
-                    </div>
-                  </Sheet>
+                      </div>
+                    </Sheet>
+
+                    <img src={BradmanDancing} alt="yolo" style={{ height: 'auto', width: 'auto' }} />
+                  </div>
               </div>
           </Modal>
         )}
